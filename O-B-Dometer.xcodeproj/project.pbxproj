@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E43EA25C29D9E62900F10908 /* LTSupportAutomotive in Frameworks */ = {isa = PBXBuildFile; productRef = E43EA25B29D9E62900F10908 /* LTSupportAutomotive */; };
 		E45EB3A229D8BD3E00BB829A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45EB3A129D8BD3E00BB829A /* AppDelegate.swift */; };
 		E45EB3A429D8BD3E00BB829A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45EB3A329D8BD3E00BB829A /* SceneDelegate.swift */; };
 		E45EB3A629D8BD3E00BB829A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45EB3A529D8BD3E00BB829A /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 				E47E358A29D908220047D879 /* FirebaseFirestore in Frameworks */,
 				E47E358129D8F69D0047D879 /* CoreBluetooth.framework in Frameworks */,
 				E47E358629D908220047D879 /* FirebaseAuth in Frameworks */,
+				E43EA25C29D9E62900F10908 /* LTSupportAutomotive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +116,7 @@
 				E47E358529D908220047D879 /* FirebaseAuth */,
 				E47E358729D908220047D879 /* FirebaseDatabase */,
 				E47E358929D908220047D879 /* FirebaseFirestore */,
+				E43EA25B29D9E62900F10908 /* LTSupportAutomotive */,
 			);
 			productName = "O-B-Dometer";
 			productReference = E45EB39E29D8BD3E00BB829A /* O-B-Dometer.app */;
@@ -145,6 +148,7 @@
 			mainGroup = E45EB39529D8BD3E00BB829A;
 			packageReferences = (
 				E47E358429D908220047D879 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E43EA25A29D9E62900F10908 /* XCRemoteSwiftPackageReference "LTSupportAutomotive" */,
 			);
 			productRefGroup = E45EB39F29D8BD3E00BB829A /* Products */;
 			projectDirPath = "";
@@ -402,6 +406,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E43EA25A29D9E62900F10908 /* XCRemoteSwiftPackageReference "LTSupportAutomotive" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mickeyl/LTSupportAutomotive.git";
+			requirement = {
+				branch = SPM;
+				kind = branch;
+			};
+		};
 		E47E358429D908220047D879 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -413,6 +425,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E43EA25B29D9E62900F10908 /* LTSupportAutomotive */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E43EA25A29D9E62900F10908 /* XCRemoteSwiftPackageReference "LTSupportAutomotive" */;
+			productName = LTSupportAutomotive;
+		};
 		E47E358529D908220047D879 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E47E358429D908220047D879 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
