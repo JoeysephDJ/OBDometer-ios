@@ -81,6 +81,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                         //currentState is now Old state, and currentState becomes placemark state
                         AppDelegate.shared().oldState = AppDelegate.shared().currentState
                         AppDelegate.shared().currentState = state
+                        AppDelegate.shared().pushToCloud()
                         
                     }
                 }
