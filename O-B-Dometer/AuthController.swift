@@ -14,7 +14,6 @@ class AuthController: UIViewController {
     @IBOutlet var emailField:UITextField!
     @IBOutlet var passField:UITextField!
     @IBOutlet var invalidLabel:UILabel!
-    var uid = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +28,7 @@ class AuthController: UIViewController {
                 self.invalidLabel.isHidden = false
             } else {
                 // The user sucessfully logged in.
-                self.uid = "\(authResult?.user.uid ?? "")"
+                AppDelegate.shared().uid = "\(authResult?.user.uid ?? "")"
                 print("User logged in: \(authResult?.user.uid ?? "")")
                 self.performSegue(withIdentifier: "go", sender: self)
             }
@@ -44,7 +43,7 @@ class AuthController: UIViewController {
                 print("Error creating user: \(error.localizedDescription)")
             } else {
                 // The user account was successfully created
-                self.uid = "\(authResult?.user.uid ?? "")"
+                AppDelegate.shared().uid = "\(authResult?.user.uid ?? "")"
                 print("User created: \(authResult?.user.uid ?? "")")
                 self.performSegue(withIdentifier: "go", sender: self)
             }
@@ -55,9 +54,5 @@ class AuthController: UIViewController {
      // MARK: - Navigation
     */
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         let nextVC = segue.destination as! ViewController
-         nextVC.uid = uid
-     }
     
 }

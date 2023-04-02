@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var oldState = ""
     var latitude = ""
     var longitude = ""
+    var uid = ""
     var dataArray = Array(repeating: 0, count: 57)
     //creation of shared persistent data object
     static func shared() -> AppDelegate {
