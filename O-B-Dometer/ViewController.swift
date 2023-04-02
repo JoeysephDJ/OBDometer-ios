@@ -9,7 +9,6 @@ import UIKit
 import CoreLocation
 import CoreBluetooth
 import MapKit
-import FirebaseCore
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, CBCentralManagerDelegate{
     
@@ -30,6 +29,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         mapView.showsUserLocation = true
         mapView.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func uploadPress(_ sender: UIButton) {
+        AppDelegate.shared().pushToCloud()
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -65,17 +68,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 //handle returned placemark
                 if let placemarks = placemarks, let placemark = placemarks.first {
                     print(placemark.administrativeArea!)
+                    print(placemark.thoroughfare!)
                     let state = placemark.administrativeArea!
-                    self.testText.text += placemark.administrativeArea! + "\n"
+                    AppDelegate.shared().road = placemark.thoroughfare!
+                    self.testText.text += state + " " + AppDelegate.shared().road + "\n"
                     //if no currentState
                     if (AppDelegate.shared().currentState == "") {
                         //currentState = placemark state
-                        AppDelegate.shared().currentState = placemark.administrativeArea!
+                        AppDelegate.shared().currentState = state
                     } else if (state != AppDelegate.shared().currentState) {
                         //if placemark state is different from current state,
                         //currentState is now Old state, and currentState becomes placemark state
                         AppDelegate.shared().oldState = AppDelegate.shared().currentState
                         AppDelegate.shared().currentState = state
+                        
                     }
                 }
                 else {
