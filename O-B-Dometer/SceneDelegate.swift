@@ -45,6 +45,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        UserDefaults.standard.set(AppDelegate.shared().currentState, forKey: "currentState")
+        UserDefaults.standard.set(AppDelegate.shared().oldState, forKey: "oldState")
+        UserDefaults.standard.set(AppDelegate.shared().latitude, forKey: "latitude")
+        UserDefaults.standard.set(AppDelegate.shared().longitude, forKey: "longitude")
+        var i = 0 //loop index
+        for key in AppDelegate.shared().abrevArray {
+            //initalize data array with local data
+            UserDefaults.standard.set(AppDelegate.shared().dataArray[i], forKey: key)
+            i += 1 //increment
+        }
     }
 
 

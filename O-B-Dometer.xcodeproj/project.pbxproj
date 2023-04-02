@@ -13,6 +13,9 @@
 		E45EB3A929D8BD3E00BB829A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45EB3A729D8BD3E00BB829A /* Main.storyboard */; };
 		E45EB3AB29D8BD3F00BB829A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45EB3AA29D8BD3F00BB829A /* Assets.xcassets */; };
 		E45EB3AE29D8BD3F00BB829A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45EB3AC29D8BD3F00BB829A /* LaunchScreen.storyboard */; };
+		E47E357D29D8D6780047D879 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E357C29D8D6780047D879 /* TableController.swift */; };
+		E47E358129D8F69D0047D879 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47E358029D8F69D0047D879 /* CoreBluetooth.framework */; };
+		E47E358329D905210047D879 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E47E358229D905210047D879 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		E45EB3AA29D8BD3F00BB829A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E45EB3AD29D8BD3F00BB829A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E45EB3AF29D8BD3F00BB829A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47E357C29D8D6780047D879 /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		E47E358029D8F69D0047D879 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		E47E358229D905210047D879 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E47E358129D8F69D0047D879 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,7 @@
 			children = (
 				E45EB3A029D8BD3E00BB829A /* O-B-Dometer */,
 				E45EB39F29D8BD3E00BB829A /* Products */,
+				E47E357F29D8F69D0047D879 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +67,22 @@
 				E45EB3A129D8BD3E00BB829A /* AppDelegate.swift */,
 				E45EB3A329D8BD3E00BB829A /* SceneDelegate.swift */,
 				E45EB3A529D8BD3E00BB829A /* ViewController.swift */,
+				E47E357C29D8D6780047D879 /* TableController.swift */,
 				E45EB3A729D8BD3E00BB829A /* Main.storyboard */,
 				E45EB3AA29D8BD3F00BB829A /* Assets.xcassets */,
 				E45EB3AC29D8BD3F00BB829A /* LaunchScreen.storyboard */,
 				E45EB3AF29D8BD3F00BB829A /* Info.plist */,
+				E47E358229D905210047D879 /* GoogleService-Info.plist */,
 			);
 			path = "O-B-Dometer";
+			sourceTree = "<group>";
+		};
+		E47E357F29D8F69D0047D879 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E47E358029D8F69D0047D879 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45EB3AE29D8BD3F00BB829A /* LaunchScreen.storyboard in Resources */,
+				E47E358329D905210047D879 /* GoogleService-Info.plist in Resources */,
 				E45EB3AB29D8BD3F00BB829A /* Assets.xcassets in Resources */,
 				E45EB3A929D8BD3E00BB829A /* Main.storyboard in Resources */,
 			);
@@ -138,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E47E357D29D8D6780047D879 /* TableController.swift in Sources */,
 				E45EB3A629D8BD3E00BB829A /* ViewController.swift in Sources */,
 				E45EB3A229D8BD3E00BB829A /* AppDelegate.swift in Sources */,
 				E45EB3A429D8BD3E00BB829A /* SceneDelegate.swift in Sources */,
@@ -289,6 +309,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "O-B-Dometer/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to check when crossing state lines.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -316,6 +338,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "O-B-Dometer/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to check when crossing state lines.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
