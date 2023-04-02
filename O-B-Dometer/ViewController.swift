@@ -9,6 +9,8 @@ import UIKit
 import CoreLocation
 import CoreBluetooth
 import MapKit
+import FirebaseCore
+import FirebaseAuth
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, CBCentralManagerDelegate{
     
@@ -84,5 +86,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
         
     }
+    
 }
 
