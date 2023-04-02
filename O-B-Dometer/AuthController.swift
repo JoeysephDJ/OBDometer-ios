@@ -6,24 +6,58 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseCore
 
 class AuthController: UIViewController {
-
+    
+    @IBOutlet var emailField:UITextField!
+    @IBOutlet var passField:UITextField!
+    @IBOutlet var invalidLabel:UILabel!
+    var uid = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func logIn(_ sender: UIButton) {
+        Auth.auth().signIn(withEmail: emailField.text ?? "", password: passField.text ?? "") { authResult, error in
+            if let error = error {
+                // An error occurred while creating the user account
+                print("Error logging in: \(error.localizedDescription)")
+                self.invalidLabel.isHidden = false
+            } else {
+                // The user sucessfully logged in.
+                self.uid = "\(authResult?.user.uid ?? "")"
+                print("User logged in: \(authResult?.user.uid ?? "")")
+                self.performSegue(withIdentifier: "go", sender: self)
+            }
+        }
+        
     }
+    
+    @IBAction func createAcc(_ sender: UIButton) {
+        Auth.auth().createUser(withEmail: emailField.text ?? "", password: passField.text ?? "") { authResult, error in
+            if let error = error {
+                // An error occurred while creating the user account
+                print("Error creating user: \(error.localizedDescription)")
+            } else {
+                // The user account was successfully created
+                self.uid = "\(authResult?.user.uid ?? "")"
+                print("User created: \(authResult?.user.uid ?? "")")
+                self.performSegue(withIdentifier: "go", sender: self)
+            }
+        }
+        
+    }
+    /*
+     // MARK: - Navigation
     */
-
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let nextVC = segue.destination as! ViewController
+         nextVC.uid = uid
+     }
+    
 }

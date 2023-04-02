@@ -10,7 +10,6 @@ import CoreLocation
 import CoreBluetooth
 import MapKit
 import FirebaseCore
-import FirebaseAuth
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, CBCentralManagerDelegate{
     
@@ -18,6 +17,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBOutlet var mapView:MKMapView!
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
+    var uid = ""
     var centralManager: CBCentralManager!
     
     override func viewDidLoad() {
@@ -86,6 +86,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        print(uid)
+    }
 }
 
